@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APLPHABET CLASH PRO</title>
+
+    <!-- Anton and Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- daisyUI and tailwindcss -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- css styles -->
+    <style>
+      .font_anton {
+        font-family: "Anton", sans-serif;
+      }
+      .font_poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#010313] font_poppins">
+    <main
+      class="bg-[#010313] min-h-screen bg-[url(Assets/images/background.png)] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+    >
+      <div class="">
+        <section
+          class="home flex justify-center items-center flex-col gap-8"
+          id="home_sec"
+        >
+          <h1 class="font_anton text-white text-8xl font-extrabold self-center">
+            ALPHABET CLASH
+          </h1>
+          <p class="text-white self-center text-base">
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button
+            class="btn bg-white px-8 py-4 font-bold rounded-lg self-center"
+            onclick="play()"
+          >
+            Play Now
+          </button>
+        </section>
+        <section class="play_ground flex flex-col gap-12 p-4 hidden" id="game_sec">
+          <div
+            class="display artboard artboard-horizontal phone-6 flex justify-center items-center bg-[#ffffffbf] border-[12px] border-[#010313cc] rounded-2xl"
+          >
+            <spna id="letter_display" class="text-black text-8xl font-bold uppercase"></spna>
+          </div>
+          <div class="key_bord">
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd id="1" class="kbd">1</kbd>
+              <kbd id="2" class="kbd">2</kbd>
+              <kbd id="3" class="kbd">3</kbd>
+              <kbd id="4" class="kbd">4</kbd>
+              <kbd id="5" class="kbd">5</kbd>
+              <kbd id="6" class="kbd">6</kbd>
+              <kbd id="7" class="kbd">7</kbd>
+              <kbd id="8" class="kbd">8</kbd>
+              <kbd id="9" class="kbd">9</kbd>
+              <kbd id="0" class="kbd">0</kbd>
+            </div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd id="q" class="kbd">q</kbd>
+              <kbd id="w" class="kbd">w</kbd>
+              <kbd id="e" class="kbd">e</kbd>
+              <kbd id="r" class="kbd">r</kbd>
+              <kbd id="t" class="kbd">t</kbd>
+              <kbd id="y" class="kbd">y</kbd>
+              <kbd id="u" class="kbd">u</kbd>
+              <kbd id="i" class="kbd">i</kbd>
+              <kbd id="o" class="kbd">o</kbd>
+              <kbd id="p" class="kbd">p</kbd>
+            </div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd id="a" class="kbd">a</kbd>
+              <kbd id="s" class="kbd">s</kbd>
+              <kbd id="d" class="kbd">d</kbd>
+              <kbd id="f" class="kbd">f</kbd>
+              <kbd id="g" class="kbd">g</kbd>
+              <kbd id="h" class="kbd">h</kbd>
+              <kbd id="j" class="kbd">j</kbd>
+              <kbd id="k" class="kbd">k</kbd>
+              <kbd id="l" class="kbd">l</kbd>
+            </div>
+            <div class="my-1 flex w-full justify-center gap-1">
+              <kbd id="z" class="kbd">z</kbd>
+              <kbd id="x" class="kbd">x</kbd>
+              <kbd id="c" class="kbd">c</kbd>
+              <kbd id="v" class="kbd">v</kbd>
+              <kbd id="b" class="kbd">b</kbd>
+              <kbd id="n" class="kbd">n</kbd>
+              <kbd id="m" class="kbd">m</kbd>
+              <kbd id="/" class="kbd">/</kbd>
+            </div>
+          </div>
+          <div class="btn_cont flex justify-between self-center w-full">
+            <button
+              class="px-8 py-4 bg-[#894189] border-none flex gap-2 font-medium rounded-full text-white items-center justify-center bg-contain bg-no-repeat bg-[url('Assets/svg/btn_bg.svg')]"
+            >
+              Life
+              <img src="Assets/svg/life.svg" alt="lives" />
+              <span id="current_lifes">5</span>
+            </button>
+
+            <button
+              class="px-8 py-4 bg-[#360490] border-none flex gap-2 font-medium rounded-full text-white items-center justify-center bg-contain bg-no-repeat bg-[url('Assets/svg/btn_bg.svg')]"
+            >
+              Score
+              <img src="Assets/svg/life.svg" alt="lives" />
+              <span id="current_Score">1</span>
+            </button>
+          </div>
+        </section>
+        <section class="score_card hidden" id="score_sec">
+          <div
+            class="flex flex-col font-semibold leading-tight text-white max-w-[396px] rounded-xl bg-gradient-to-br from-[#ffffff99] to-[#98979701]"
+            role="region"
+            aria-label="Score Display"
+          >
+            <div
+              class="card flex flex-col gap-4 px-12 py-11 w-full bg-[url('Assets/svg/scoreCard_backgroundRectangle.svg')] bg-contain bg-no-repeat"
+            >
+              <div class="text-6xl" aria-live="polite">
+                <span class="font-extrabold">Score</span>
+                <span class="">:</span>
+                <span class="font-medium" aria-label="Current score is 14"
+                  >14</span
+                >
+              </div>
+              <button
+                class="gap-2.5 self-center px-8 py-4 text-2xl bg-white rounded-lg text-gray-950 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                aria-label="Start playing the game"
+              >
+                Play Now
+              </button>
+              <div
+                class="self-end text-xl font-medium"
+                aria-label="Motivational message"
+              >
+                Practice will make you Pro
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="Assets/js/custom.js"></script>
+  </body>
+</html>

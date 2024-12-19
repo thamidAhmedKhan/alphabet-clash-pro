@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Button</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- daisyUI and tailwindcss -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* General Reset */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #1b1b2f; /* Dark background to match your image */
+      }
+
+      .custom-btn {
+        background: #8a3b8f; /* Solid purple background */
+        border: none;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Space between text and icon */
+        padding: 15px 25px;
+        border-radius: 50px; /* Large value for pill-like shape */
+        width: 300px; /* Adjust the width */
+        height: 100px; /* Adjust the height */
+        cursor: pointer;
+        position: relative;
+        overflow: hidden; /* Ensures gradient effect stays inside */
+        box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.3),
+          inset 10px 10px 20px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Optional text styles */
+      .life-text {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+      .life-count {
+        font-size: 1.5em;
+      }
+
+      .heart-icon {
+        font-size: 2em; /* Size of heart icon */
+      }
+    </style>
+  </head>
+  <body class="flex flex-col gap-[5rem]">
+    <button class="custom-btn">
+      <span class="life-text">Life</span>
+      <span class="heart-icon">❤️</span>
+      <span class="life-count">1</span>
+    </button>
+
+    <div style="width: 160px; height: 56px; position: relative">
+      <div
+        style="
+          width: 160px;
+          height: 56px;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+          background: #894189;
+          border-radius: 30px;
+        "
+      ></div>
+      <div
+        style="
+          width: 57px;
+          height: 56px;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.07);
+        "
+      ></div>
+      <div
+        style="
+          width: 89.67px;
+          height: 24px;
+          left: 35px;
+          top: 16px;
+          position: absolute;
+        "
+      >
+        <div
+          style="
+            width: 71.67px;
+            height: 24px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+          "
+        >
+          <div
+            style="
+              left: 0px;
+              top: 0px;
+              position: absolute;
+              text-align: center;
+              color: white;
+              font-size: 20px;
+              font-family: Inter;
+              font-weight: 500;
+              line-height: 24px;
+              word-wrap: break-word;
+            "
+          >
+            Life
+          </div>
+          <div
+            style="
+              width: 29.04px;
+              height: 21.17px;
+              left: 42.62px;
+              top: 1px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 22.75px;
+                height: 21px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: white;
+              "
+            ></div>
+            <div
+              style="
+                width: 14.67px;
+                height: 14.67px;
+                left: 14.38px;
+                top: 6.5px;
+                position: absolute;
+              "
+            >
+              <div
+                style="
+                  width: 14.67px;
+                  height: 14.67px;
+                  left: 0px;
+                  top: 0px;
+                  position: absolute;
+                  background: #894189;
+                "
+              ></div>
+              <div
+                style="
+                  width: 13.33px;
+                  height: 13.33px;
+                  left: 1px;
+                  top: 0.67px;
+                  position: absolute;
+                  background: white;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            left: 79.67px;
+            top: 0px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-family: Inter;
+            font-weight: 500;
+            line-height: 24px;
+            word-wrap: break-word;
+          "
+        >
+          1
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col text-xl font-medium leading-tight text-center text-white whitespace-nowrap rounded-none max-w-[160px]"
+      role="region"
+      aria-label="Number indicator section"
+    >
+      <div
+        class="flex gap-2 items-center bg-fuchsia-800 rounded-[30px]"
+        tabindex="0"
+      >
+        <div
+          class="flex shrink-0 self-stretch h-14 bg-white bg-opacity-10 rounded-[30px_8px_8px_30px] w-[70px]"
+          aria-hidden="true"
+        ></div>
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d870a255467f554c33668bcca17b6e26c58b68ada57873bbb2c5af6ffe005314?apiKey=886fb2a9613f4e85a506359ddd00b955&"
+          class="object-contain shrink-0 self-stretch my-auto aspect-[1.38] w-[29px]"
+          alt="Number indicator icon"
+        />
+        <div class="self-stretch my-auto" aria-label="Current number: 1">1</div>
+      </div>
+    </div>
+
+    <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a377ba370b702855c71032b5e916408850f1fdd31570e80bb084a13e8e31a24?placeholderIfAbsent=true&apiKey=886fb2a9613f4e85a506359ddd00b955"
+      class="object-contain w-full aspect-[0.95] max-w-[53px] rounded-[30px_8px_8px_30px]"
+      alt=""
+      tabindex="-1"
+    />
+
+    <svg
+      width="54"
+      height="56"
+      viewBox="0 0 54 56"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 27.9981C0 12.5341 12.536 -0.00189209 28 -0.00189209H45.2619C50.9006 -0.00189209 54.7697 5.67515 52.708 10.9233L36.9682 50.9881C35.7808 54.0105 32.8645 55.9981 29.6172 55.9981H28C12.536 55.9981 0 43.4621 0 27.9981Z"
+        fill="white"
+        fill-opacity="0.07"
+      />
+    </svg>
+
+    <div class="w-[6rem] aspect-[0.95] bg-black rounded-[30px_8px_8px_30px]">
+      <svg
+        width="54"
+        height="56"
+        viewBox="0 0 54 56"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 27.9981C0 12.5341 12.536 -0.00189209 28 -0.00189209H45.2619C50.9006 -0.00189209 54.7697 5.67515 52.708 10.9233L36.9682 50.9881C35.7808 54.0105 32.8645 55.9981 29.6172 55.9981H28C12.536 55.9981 0 43.4621 0 27.9981Z"
+          fill="white"
+          fill-opacity="0.07"
+        />
+      </svg>
+    </div>
+
+    <div
+      class="flex flex-col font-semibold leading-tight text-white max-w-[396px] card bg-gradient-to-br from-white to-[#989797] p-4 rounded-lg"
+      role="region"
+      aria-label="Score Display"
+    >
+      <div
+        class="flex flex-col px-12 py-11 w-full rounded-2xl border border-solid border-white border-opacity-20"
+      >
+        <div class="text-6xl" aria-live="polite">
+          <span class="font-extrabold">Score</span>
+          <span class="">:</span>
+          <span class="font-medium" aria-label="Current score is 14">14</span>
+        </div>
+        <button
+          class="gap-2.5 self-center px-8 py-4 mt-4 text-2xl bg-white rounded-lg text-gray-950 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+          aria-label="Start playing the game"
+        >
+          Play Now
+        </button>
+        <div
+          class="self-end mt-4 text-xl font-medium"
+          aria-label="Motivational message"
+        >
+          Practice will make you Pro
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="card bg-gradient-to-br from-white to-[#989797] p-4 rounded-lg"
+    ></div>
+  </body>
+</html>
