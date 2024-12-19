@@ -107,3 +107,11 @@ function handleKeyboardButtonPress(event) {
 }
 
 document.addEventListener("keyup", handleKeyboardButtonPress);
+
+const playButton = document.getElementById("playButton");
+
+playButton.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    play();
+  }
+});

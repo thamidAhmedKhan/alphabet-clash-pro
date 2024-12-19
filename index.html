@@ -48,17 +48,25 @@
             Unleash Your Keyboard Kung Fu : Press “Enter” to Play
           </p>
           <button
+            id="playButton"
             class="btn bg-white px-8 py-4 font-bold rounded-lg self-center"
             onclick="play()"
+            autofocus
           >
             Play Now
           </button>
         </section>
-        <section class="play_ground flex flex-col gap-12 p-4 hidden" id="game_sec">
+        <section
+          class="play_ground flex flex-col gap-12 p-4 hidden"
+          id="game_sec"
+        >
           <div
             class="display artboard artboard-horizontal phone-6 flex justify-center items-center bg-[#ffffffbf] border-[12px] border-[#010313cc] rounded-2xl"
           >
-            <spna id="letter_display" class="text-black text-8xl font-bold uppercase"></spna>
+            <spna
+              id="letter_display"
+              class="text-black text-8xl font-bold uppercase"
+            ></spna>
           </div>
           <div class="key_bord">
             <div class="my-1 flex w-full justify-center gap-1">
