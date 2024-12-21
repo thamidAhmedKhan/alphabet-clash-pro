@@ -61,6 +61,11 @@
           id="game_sec"
         >
           <div
+            class="self-center bg-[#010313cc] text-white p-2 rounded-lg absolute"
+          >
+            Don't watch keyboard while playing...
+          </div>
+          <div
             class="display artboard artboard-horizontal phone-6 flex justify-center items-center bg-[#ffffffbf] border-[12px] border-[#010313cc] rounded-2xl"
           >
             <spna
@@ -142,16 +147,25 @@
             <div
               class="card flex flex-col gap-4 px-12 py-11 w-full bg-[url('Assets/svg/scoreCard_backgroundRectangle.svg')] bg-contain bg-no-repeat"
             >
+              <div class="text-2xl self-center text-center" aria-live="polite">
+                Game Over!
+              </div>
               <div class="text-6xl" aria-live="polite">
                 <span class="font-extrabold">Score</span>
                 <span class="">:</span>
-                <span class="font-medium" aria-label="Current score is 14"
-                  >14</span
+                <span
+                  id="final_score"
+                  class="font-medium"
+                  aria-label="Current score is 14"
                 >
+                  0
+                </span>
               </div>
               <button
                 class="gap-2.5 self-center px-8 py-4 text-2xl bg-white rounded-lg text-gray-950 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 aria-label="Start playing the game"
+                onclick="play()"
+                autofocus
               >
                 Play Now
               </button>
